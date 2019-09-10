@@ -1,17 +1,24 @@
 @import "~bulma/sass/utilities/initial-variables"
 
+@font-face
+  font-family: Bianca
+  src: url('../Darleston.otf')
+
 // Config vars
 // Kaldi logo brand color: #FD461E
-$kaldi-red: #D64000
-$kaldi-red-invert: #fff
+$bianca-blue: #00c8cc
+$bianca-blue-contrast: #00A5A8
+$bianca-blue-contrast-extra: #008285
 
-$primary: $kaldi-red
-$primary-invert: $kaldi-red-invert
+$primary: $bianca-blue
+$primary-invert: $bianca-blue-contrast
 $body-color: #333
 $black: #2b2523
 
 .navbar .navbar-menu
   box-shadow:none !important
+  height: 110px
+  background-color: transparent
 
 .content .taglist
   list-style: none
@@ -41,16 +48,28 @@ $black: #2b2523
   display: flex
   justify-content: center
   align-items: center
-
 .full-width-image
-    width: 100vw
-    height: 400px
-    background-size: cover
-    background-position: bottom
-    display: flex
-    justify-content: center
-    align-items: center
-
+  position: relative
+  width: 100vw
+  height: 100vh
+  background-size: contain
+  background-repeat: no-repeat
+  background-position: bottom
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 1
+.full-width-image-gradient
+  position: absolute
+  top: 0px
+  left: 0px
+  right: 0px
+  bottom: 0px
+  width: 100%
+  height: 100%
+  z-index: 0
+  // background: radial-gradient(circle at 50% 110%, transparent 60%, rgba(250, 250, 250, 0.7) 75%, #fafafa 100%)
+  background: linear-gradient(to bottom, rgb(250, 250, 250), 30%, transparent 40%)
 .btn
     display: inline-block
     padding: 12px 16px 10px
@@ -70,9 +89,10 @@ $black: #2b2523
 
 .margin-top-0
   margin-top: 0 !important
-
+.navbar-item
+  color: $bianca-blue
 .navbar-item .icon
-  color: $primary
+  color: $bianca-blue
 // Override for use of svg's from https://simpleicons.org/
 .icon svg
   width: 1.5rem
@@ -83,14 +103,19 @@ $black: #2b2523
 footer.footer
   padding: 3rem 0rem 0rem
   background-color: transparent
+  z-index: 100
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  justify-content: center
 
 //Menu overrides
 $menu-item-color: $white-ter
 $menu-item-hover-color: $black !important
 $menu-item-hover-background-color: $black
-$menu-item-active-color: $kaldi-red-invert
-$menu-item-active-background-color:	$kaldi-red-invert
-$menu-list-border-left: 1px solid $kaldi-red-invert
+$menu-item-active-color: $bianca-blue-contrast
+$menu-item-active-background-color:	$bianca-blue-contrast
+$menu-list-border-left: 1px solid $bianca-blue-contrast
 $menu-label-color: $white-ter
 
 
@@ -125,16 +150,241 @@ $menu-label-color: $white-ter
 
 @import "~bulma"
 
+.navbar-item
+  color: $bianca-blue-contrast
+  font-size: 2em
+  width: 100%
+  text-align: center
 
+.navbar-item img
+  max-height: none
+
+.navbar
+  position: fixed
+  width: 100%
+  background-color: transparent !important
+
+.navbar-menu
+  display: flex
+  justify-content: space-evenly
+  flex-direction: column
+
+.navbar-menu-end
+  position: absolute
+  top: 35px
+  right: 25px
+  width: 26px
+  height: 26px
+  &:hover
+    cursor: pointer
+    .menu-expand::before
+      width: 26px
+    .menu-expand::after
+      width: 26px
+  .menu-expand
+    height: 4px
+    width: 100%
+    position: relative
+    background-color: $white
+    border: 2px solid $bianca-blue-contrast
+    z-index: 3
+    transition: all .3s
+    border-radius: 2px
+    &::before
+      transition-delay: .3s
+      transition: all .3s
+      position: absolute
+      right: -2px
+      bottom: -11px
+      height: 4px
+      width: 21px
+      content: ''
+      display: block
+      background-color: $bianca-blue-contrast
+      z-index: 4
+      border-radius: 2px
+    &::after
+      transition-delay: .3s
+      transition: all .3s
+      position: absolute
+      right: -2px
+      bottom: -20px
+      height: 4px
+      width: 16px
+      content: ''
+      display: block
+      background-color: $white
+      border: 2px solid $bianca-blue-contrast
+      z-index: 4
+      border-radius: 2px
+  .menu-is-active
+    position: absolute
+    right: 0px
+    height: calc(100vh - 50px)
+    width: calc(90vw)
+    padding: 0px 50px
+    border-radius: 4px
+    display: flex
+    flex-direction: column
+    align-items: space-evenly
+    justify-content: center
+    &::before
+      position: absolute
+      top: 20px
+      right: 10px
+      width: 2px
+      border-radius: 0px
+      border: none
+      transform: rotate(45deg)
+    &::after
+      position: absolute
+      top: 20px
+      right: 10px
+      width: 2px
+      background-color: $bianca-blue-contrast
+      border-radius: 0px
+      border: none
+      transform: rotate(-45deg)
 // responsiveness
 +tablet-only
   .blog-list-item .featured-thumbnail
-    flex-basis: 50%;
+    flex-basis: 50%
 
 +mobile
   .blog-list-item header
     display: block
   .blog-list-item .featured-thumbnail
-    text-align: center;
-    max-width: 70%;
-    margin: 0 0 1em;
+    text-align: center
+    max-width: 70%
+    margin: 0 0 1em
+
+#section03
+  position: fixed
+  bottom: 0px
+  left: 50%
+  z-index: 10
+  width: 50px
+  height: 50px
+  padding-top: 60px
+  opacity: 1
+  transition: all 1s
+  &:hover
+    cursor: pointer
+    span
+      transition: all .4s
+      background-color: rgba(250,250,250,0.6)
+      &::after
+          animation: arrowMove 3s infinite
+
+@keyframes arrowMove
+  0%
+    transform: rotate(-45deg) translate(12px, -12px)
+    opacity: 0
+
+  50%
+    opacity: 1
+
+  100%
+    transform: rotate(-45deg) translate(-12px, 12px)
+    opacity: 0
+
+
+
+#section03 span
+  background-color: rgba(250,250,250,0.4)
+  position: absolute
+  bottom: 50px
+  left: 50%
+  width: 50px
+  height: 50px
+  margin-left: -25px
+  border: 2px solid $bianca-blue-contrast-extra
+  border-radius: 100%
+  box-sizing: border-box
+
+#section03 span::after
+  position: absolute
+  top: 50%
+  left: 50%
+  content: ''
+  width: 16px
+  height: 16px
+  margin: -12px 0 0 -8px
+  border-left: 2px solid $bianca-blue-contrast-extra
+  border-bottom: 2px solid $bianca-blue-contrast-extra
+  -webkit-transform: rotate(-45deg)
+  transform: rotate(-45deg)
+  box-sizing: border-box
+
+#section03 span::before
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 100
+  content: ''
+  width: 44px
+  height: 44px
+  box-shadow: 0 0 0 0 rgba(255,255,255,.1)
+  border-radius: 100%
+  opacity: 0
+  -webkit-animation: sdb03 3s infinite
+  animation: sdb03 3s infinite
+  box-sizing: border-box
+
+@-webkit-keyframes sdb03
+  0%
+    opacity: 0
+
+  30%
+    opacity: 1
+
+  60%
+    box-shadow: 0 0 0 60px rgba(255,255,255,.2)
+    opacity: 0
+
+  100%
+    opacity: 0
+
+
+@keyframes sdb03
+  0%
+    opacity: 0
+
+  30%
+    opacity: 1
+
+  60%
+    box-shadow: 0 0 0 60px rgba(255,255,255,.2)
+    opacity: 0
+
+  100%
+    opacity: 0
+
+.scroll-to-top
+  position: fixed
+  right: 6%
+  bottom: 6%
+  height: 56px
+  width: 56px
+  border-radius: 50%
+  font-size: 20px
+  background-color: $bianca-blue-contrast
+  z-index: 10
+  display: flex
+  opacity: 1
+  justify-content: center
+  align-items: center
+  color: white
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+  transition: all .5s
+  &:hover
+    cursor: pointer
+
+
+.scroll-to-top-hidden
+  opacity: 0
+  bottom: -100px
+
+.menu-list
+  a
+    color: #008285

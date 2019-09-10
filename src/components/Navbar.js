@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import logo from '../img/logo.png'
+import logoWhite from '../img/logo-white.png'
+import classNames from 'classnames'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -9,9 +11,24 @@ const Navbar = class extends React.Component {
     this.state = {
       active: false,
       navBarActiveClass: '',
+      menuExpand: false,
+      mainPage: true
     }
   }
-
+  componentDidMount() {
+    typeof window !== 'undefined' && window.addEventListener('scroll', (e) => {
+      const activeDot = Math.floor(window.scrollY / window.innerHeight);
+      if(!this.state.mainPage && (activeDot === 0 || activeDot === 5)) {
+        this.setState({
+          mainPage: true
+        })
+      } else if (activeDot !== 0 && activeDot !== 5 && this.state.mainPage) {
+        this.setState({
+          mainPage: false
+        })
+      }
+    })
+  }
   toggleHamburger = () => {
     // toggle the active boolean in the state
     this.setState(
@@ -32,6 +49,12 @@ const Navbar = class extends React.Component {
     )
   }
 
+  toogleMenu = () => {
+    this.setState(prevState => ({
+      menuExpand: !prevState.menuExpand
+    }))
+  }
+
   render() {
     return (
       <nav
@@ -42,51 +65,42 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
+              <img src={this.state.mainPage ? logo : logoWhite} alt="Bianca logo" style={{ width: '140px', height: 'auto', marginLeft: '20px', marginTop: '10px' }} />
             </Link>
             {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+            <div className={`navbar-burger burger ${this.state.navBarActiveClass}`}
               data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
+              onClick={() => this.toggleHamburger()}>
               <span />
               <span />
               <span />
             </div>
           </div>
           <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
+            className="navbar-menu-end"
+            style={this.state.mainPage ? {right: 30, transition: 'linear .2s'} : {right: -35, transition: 'linear .2s'}}
+            onClick={this.toogleMenu}
+            >
+            <div className={classNames("menu-expand", {"menu-is-active": this.state.menuExpand})}>
+            {this.state.menuExpand && <div
+              id="navMenu"
+              className={`navbar-menu ${this.state.navBarActiveClass}`}>
+                <Link className="navbar-item" to="/products">
+                  Nasze psy
+                </Link>
+                <Link className="navbar-item" to="/products">
+                  Nasze mioty
+                </Link>
+                <Link className="navbar-item" to="/blog">
+                  Wystawy
+                </Link>
+                <Link className="navbar-item" to="/blog">
+                  Galeria
+                </Link>
+                <Link className="navbar-item" to="/contact">
+                  Kontakt
+                </Link>
+            </div>}
             </div>
           </div>
         </div>
