@@ -47,7 +47,7 @@ const DotsContainer = styled.div`
 
 const LogoFederationsContainer = styled.div`
   position: relative;
-  top: -80px;
+  top: -50px;
   left: 20px;
   @media only screen and (min-width: 1088px) {
     left: -80px;
