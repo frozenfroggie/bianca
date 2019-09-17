@@ -35,7 +35,7 @@ const DotsContainer = styled.div`
   z-index: 10;
   position: fixed;
   transition: all .3s;
-  top: calc(50% + 93px);
+  top: calc(50% + 90px);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
