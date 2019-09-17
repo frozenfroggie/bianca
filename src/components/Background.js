@@ -55,8 +55,9 @@ const LogoFederationsContainer = styled.div`
   left: 0px;
   width: 100vw;
   @media only screen and (min-width: 1088px) {
+    width: 200px;
     left: -80px;
-    bottom: -70px;
+    top: 70px;
   }
 `
 
@@ -71,6 +72,8 @@ const Federations = styled.div`
     margin-right: 5px;
   }
   @media only screen and (min-width: 1088px) {
+    justify-content: space-evenly;
+    width: 200px;
     top: 105px;
     left: 0px;
   }
