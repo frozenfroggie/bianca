@@ -9,6 +9,10 @@ import BiancaWallpaper3 from '../img/biancaWallpaper3.jpg'
 import BiancaWallpaper4 from '../img/biancaWallpaper4.jpg'
 import BiancaWallpaper5 from '../img/biancaWallpaper5.jpg'
 
+import FederationLogo1 from '../img/federation_logo1.png'
+import FederationLogo2 from '../img/federation_logo2.png'
+import Logo from '../img/logo.png'
+
 const Dot = styled.div`
   width: 6px;
   height: 6px;
@@ -38,32 +42,61 @@ const DotsContainer = styled.div`
   align-items: center;
 `
 
+const LogoFederationsContainer = styled.div`
+  position: relative;
+  @media only screen and (min-width: 1088px) {
+    left: -80px;
+    bottom: -70px;
+  }
+`
+
+const Federations = styled.div`
+  display: flex;
+  justifyContent: space-evenly;
+  height: 60px;
+  position: relative;
+  @media only screen and (min-width: 1088px) {
+    top: 105px;
+    left: 0px;
+  }
+`
+
 const TextBackground = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0px;
-  right: ${props => props.right};
-  left: ${props => props.left};
-  height: 100vh;
-  width: 45%;
   background-color: white;
-  transform: skew(${props => props.skew}deg);
+  width: 100%;
+  left: ${props => props.left};
+  top: 50vh;
+  height: 50vh;
+  @media only screen and (min-width: 1088px) {
+    height: 100vh;
+    top: 0px;
+    right: ${props => props.right};
+    transform: skew(${props => props.skew}deg);
+    width: 45%;
+  }
   /* background: radial-gradient(circle at center,hsla(0,0%,98%,.9),transparent 100%); */
 `
 
 const TextBackgroundContent = styled.div`
-  transform: skew(${props => props.skew}deg);
-  font-size: 1.5em;
   height: 100%;
-  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #008285;
   position: relative;
-  left: -50px;
+  width: 90%;
+  left: 0px;
+  font-size: 1.3em;
+  @media only screen and (min-width: 1088px) {
+    font-size: 1.5em;
+    left: -50px;
+    width: 50%;
+    transform: skew(${props => props.skew}deg);
+  }
 `
 
 function scrollTo(offset, callback) {
@@ -140,6 +173,19 @@ class Background extends React.Component {
             backgroundSize: 'cover',
             top: '0px'
           }}>
+          <TextBackground skew="-15" right="-7%">
+            <TextBackgroundContent skew="15">
+              <LogoFederationsContainer>
+                <div>
+                  <img src={Logo} width="200" style={{position: 'relative'}}/>
+                </div>
+                <Federations>
+                  <img src={FederationLogo1} width="60" height="60" />
+                  <img src={FederationLogo2} width="60" height="60" />
+                </Federations>
+              </LogoFederationsContainer>
+            </TextBackgroundContent>
+          </TextBackground>
         </div>
         <div className="full-width-image margin-top-0"
           style={{
