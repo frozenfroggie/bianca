@@ -65,7 +65,7 @@ const Federations = styled.div`
   width: 100vw;
   height: 60px;
   position: relative;
-  top: 50px;
+  top: 0px;
   left: 20px;
   img {
     margin-right: 5px;
