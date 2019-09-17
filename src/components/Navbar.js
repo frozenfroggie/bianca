@@ -63,17 +63,6 @@ const Navbar = class extends React.Component {
         aria-label="main-navigation"
       >
         <div className="container">
-          <div className="navbar-brand">
-  
-            {/* Hamburger menu */}
-            <div className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}>
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
           <div
             className="navbar-menu-end"
             style={this.state.mainPage ? {right: 30, transition: 'linear .2s'} : {right: -35, transition: 'linear .2s'}}

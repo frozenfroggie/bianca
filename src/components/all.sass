@@ -50,11 +50,17 @@ $black: #2b2523
   align-items: center
 .full-width-image
   position: relative
-  width: 100vw
   height: 100vh
-  background-size: contain
+  width: 100vw
+  background-color: transparent
+  background-size: 100vh auto
   background-repeat: no-repeat
-  background-position: bottom
+  background-position: 40% top
+  top: 0px
+  @media only screen and (min-width: 1088px)
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: left top
   display: flex
   justify-content: center
   align-items: center

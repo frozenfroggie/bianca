@@ -35,15 +35,20 @@ const DotsContainer = styled.div`
   z-index: 10;
   position: fixed;
   transition: all .3s;
-  top: calc(50% - 30px);
+  top: calc(50% + 50px);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  @media only screen and (min-width: 1088px) {
+    top: calc(50% - 30px);
+  }
 `
 
 const LogoFederationsContainer = styled.div`
   position: relative;
+  top: -80px;
+  left: 20px;
   @media only screen and (min-width: 1088px) {
     left: -80px;
     bottom: -70px;
@@ -52,7 +57,7 @@ const LogoFederationsContainer = styled.div`
 
 const Federations = styled.div`
   display: flex;
-  justifyContent: space-evenly;
+  justify-content: space-evenly;
   height: 60px;
   position: relative;
   @media only screen and (min-width: 1088px) {
@@ -62,16 +67,17 @@ const Federations = styled.div`
 `
 
 const TextBackground = styled.div`
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
-  width: 100%;
-  left: ${props => props.left};
-  top: 50vh;
   height: 50vh;
+  width: 100%;
+  bottom: -50px;
+  position: absolute;
+  transform: skewY(${props => props.skew}deg);
   @media only screen and (min-width: 1088px) {
+    position: absolute;
     height: 100vh;
     top: 0px;
     right: ${props => props.right};
@@ -83,15 +89,18 @@ const TextBackground = styled.div`
 
 const TextBackgroundContent = styled.div`
   height: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
   color: #008285;
+  background-color: transparent;
   position: relative;
   width: 90%;
   left: 0px;
   font-size: 1.3em;
+  display: flex;
+  transform: skewY(${props => props.skew}deg);
   @media only screen and (min-width: 1088px) {
+    position: relative;
     font-size: 1.5em;
     left: -50px;
     width: 50%;
@@ -168,10 +177,7 @@ class Background extends React.Component {
             backgroundImage: `url(${
               BiancaWallpaper
             })`,
-            backgroundPosition: `50%`,
-            backgroundAttachment: `fixed`,
-            backgroundSize: 'cover',
-            top: '0px'
+            backgroundAttachment: `fixed`
           }}>
           <TextBackground skew="-15" right="-7%">
             <TextBackgroundContent skew="15">
@@ -192,10 +198,7 @@ class Background extends React.Component {
             backgroundImage: `url(${
               BiancaWallpaper2
             })`,
-            backgroundPosition: `left top`,
-            backgroundAttachment: `fixed`,
-            top: '0px',
-            width: '100vw'
+            backgroundAttachment: `fixed`
           }}>
           <TextBackground skew="15" right="-7%">
             <TextBackgroundContent skew="-15">
@@ -208,10 +211,7 @@ class Background extends React.Component {
             backgroundImage: `url(${
               BiancaWallpaper3
             })`,
-            backgroundPosition: `left top`,
-            backgroundAttachment: `fixed`,
-            top: '0px',
-            width: '100vw'
+            backgroundAttachment: `fixed`
           }}>
             <TextBackground skew="-15" right="-7%">
               <TextBackgroundContent skew="15">
@@ -224,9 +224,7 @@ class Background extends React.Component {
             backgroundImage: `url(${
               BiancaWallpaper4
             })`,
-            backgroundPosition: `left top`,
-            backgroundAttachment: `fixed`,
-            top: '0px'
+            backgroundAttachment: `fixed`
           }}>
             <TextBackground skew="15" right="-7%">
               <TextBackgroundContent skew="-15">
@@ -239,9 +237,7 @@ class Background extends React.Component {
             backgroundImage: `url(${
               BiancaWallpaper5
             })`,
-            backgroundPosition: `left top`,
-            backgroundAttachment: `fixed`,
-            top: '0px'
+            backgroundAttachment: `fixed`
           }}>
             <TextBackground skew="-15" right="-7%">
               <TextBackgroundContent skew="15">
@@ -250,7 +246,7 @@ class Background extends React.Component {
             </TextBackground>
         </div>
         <div>
-          <DotsContainer style={this.state.activeDot === 0 || this.state.activeDot === 5 ? {right: 100} : {right: 25}}>
+          <DotsContainer style={this.state.activeDot === 0 || this.state.activeDot === 5 ? {right: '10%'} : {right: '5%'}}>
             <Dot active={this.state.activeDot === 0} onClick={() => this.activateDot(0)}></Dot>
             <Dot active={this.state.activeDot === 1} onClick={() => this.activateDot(1)}></Dot>
             <Dot active={this.state.activeDot === 2} onClick={() => this.activateDot(2)}></Dot>
