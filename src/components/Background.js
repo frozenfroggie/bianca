@@ -46,9 +46,14 @@ const DotsContainer = styled.div`
 `
 
 const LogoFederationsContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
   position: relative;
   top: -50px;
   left: 20px;
+  width: 100vw;
   @media only screen and (min-width: 1088px) {
     left: -80px;
     bottom: -70px;
@@ -57,9 +62,13 @@ const LogoFederationsContainer = styled.div`
 
 const Federations = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  width: 100vw;
   height: 60px;
   position: relative;
+  top: 100px;
+  img {
+    margin-right: 5px;
+  }
   @media only screen and (min-width: 1088px) {
     top: 105px;
     left: 0px;
@@ -182,9 +191,7 @@ class Background extends React.Component {
           <TextBackground skew="-15" right="-7%">
             <TextBackgroundContent skew="15">
               <LogoFederationsContainer>
-                <div>
-                  <img src={Logo} width="200" style={{position: 'relative'}}/>
-                </div>
+                <img src={Logo} width="200" style={{position: 'relative'}}/>
                 <Federations>
                   <img src={FederationLogo1} width="60" height="60" />
                   <img src={FederationLogo2} width="60" height="60" />
