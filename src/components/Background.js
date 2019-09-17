@@ -35,7 +35,7 @@ const DotsContainer = styled.div`
   z-index: 10;
   position: fixed;
   transition: all .3s;
-  top: calc(50% + 50px);
+  top: calc(50% + 95px);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -52,7 +52,7 @@ const LogoFederationsContainer = styled.div`
   flex-direction: column;
   position: relative;
   top: -50px;
-  left: 20px;
+  left: 0px;
   width: 100vw;
   @media only screen and (min-width: 1088px) {
     left: -80px;
@@ -65,7 +65,8 @@ const Federations = styled.div`
   width: 100vw;
   height: 60px;
   position: relative;
-  top: 100px;
+  top: 50px;
+  left: 20px;
   img {
     margin-right: 5px;
   }
