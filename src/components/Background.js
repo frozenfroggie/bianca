@@ -51,13 +51,13 @@ const LogoFederationsContainer = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
-  top: -50px;
+  top: 0px;
   left: 0px;
   width: 100vw;
   @media only screen and (min-width: 1088px) {
     width: 200px;
     left: -80px;
-    top: 70px;
+    top: 20%;
   }
 `
 
@@ -66,7 +66,7 @@ const Federations = styled.div`
   width: 100vw;
   height: 60px;
   position: relative;
-  top: 0px;
+  top: 55px;
   left: 20px;
   img {
     margin-right: 5px;
@@ -108,9 +108,9 @@ const TextBackgroundContent = styled.div`
   background-color: transparent;
   position: relative;
   width: 85%;
-  left: 0px;
+  left: -10px;
   top: -50px;
-  font-size: 1.3em;
+  font-size: 1.2em;
   display: flex;
   transform: skewY(${props => props.skew}deg);
   @media only screen and (min-width: 1088px) {
