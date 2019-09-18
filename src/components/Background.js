@@ -66,7 +66,7 @@ const Federations = styled.div`
   width: 100vw;
   height: 60px;
   position: relative;
-  top: 55px;
+  top: 25px;
   left: 20px;
   img {
     margin-right: 5px;
@@ -84,7 +84,7 @@ const TextBackground = styled.div`
   justify-content: center;
   align-items: center;
   background-color: white;
-  height: 50vh;
+  height: 55vh;
   width: 100%;
   bottom: -50px;
   position: absolute;
