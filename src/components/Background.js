@@ -183,7 +183,7 @@ class Background extends React.Component {
     if(isAndroidMobile) {
       bar = 56;
     }
-    if(this.state.activeDot === 4) {
+    if(this.state.activeDot === 4 && isAndroidMobile) {
       bar = 112
     }
     scrollTo((this.state.activeDot + 1) * (window.innerHeight + bar), () => {
