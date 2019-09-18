@@ -183,7 +183,8 @@ class Background extends React.Component {
     if(isAndroidMobile) {
       bar = 56;
     }
-    if(this.state.activateDot === 5 && isAndroidMobile) {
+    if(this.state.activateDot === 4 && isAndroidMobile) {
+      console.log('!!!')
       bar = 112
     }
     scrollTo((this.state.activeDot + 1) * (window.innerHeight + bar), () => {
@@ -275,7 +276,7 @@ class Background extends React.Component {
             <Dot active={this.state.activeDot === 4} onClick={() => this.activateDot(4)}></Dot>
             <Dot active={this.state.activeDot === 5} onClick={() => this.activateDot(5)}></Dot>
           </DotsContainer>
-          <section id="section03" className="demo" onClick={this.state.activeDot < 5 && this.activateNextDot} style={this.state.activeDot === 5 ? {opacity: 0} : {}}>
+          <section id="section03" className="demo" onClick={this.state.activeDot < 5 ? this.activateNextDot : undefined} style={this.state.activeDot === 5 ? {opacity: 0} : {}}>
             <span></span>
           </section>
           <div
