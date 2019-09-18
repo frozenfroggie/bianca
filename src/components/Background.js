@@ -178,13 +178,12 @@ class Background extends React.Component {
       scrolling: true
     }));
     const ua = navigator.userAgent.toLowerCase();
-    const isAndroidMobile = ua.indexOf("android") > -1 && ua.indexOf("mobile");
+    const isAndroidMobile = ua.indexOf("android") > -1; // && ua.indexOf("mobile");
     let bar = 0;
     if(isAndroidMobile) {
       bar = 56;
     }
-    if(this.state.activateDot === 4 && isAndroidMobile) {
-      console.log('!!!')
+    if(this.state.activeDot === 4) {
       bar = 112
     }
     scrollTo((this.state.activeDot + 1) * (window.innerHeight + bar), () => {
