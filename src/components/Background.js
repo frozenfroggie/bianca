@@ -109,7 +109,7 @@ const TextBackgroundContent = styled.div`
   position: relative;
   width: 85%;
   left: 0px;
-  top: -100px;
+  top: -50px;
   font-size: 1.3em;
   display: flex;
   transform: skewY(${props => props.skew}deg);
