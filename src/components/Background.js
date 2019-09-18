@@ -176,7 +176,7 @@ class Background extends React.Component {
       activeDot: prevState.activeDot + 1,
       scrolling: true
     }));
-    scrollTo((this.state.activeDot + 1) * window.innerHeight, () => {
+    scrollTo((this.state.activeDot + 1) * window.visualViewport.height, () => {
       this.setState({
         scrolling: false
       })
