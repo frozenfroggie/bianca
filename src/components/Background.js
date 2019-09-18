@@ -35,7 +35,7 @@ const DotsContainer = styled.div`
   z-index: 10;
   position: fixed;
   transition: all .3s;
-  top: calc(50% + 130px);
+  top: calc(50% + 150px);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -109,7 +109,7 @@ const TextBackgroundContent = styled.div`
   position: relative;
   width: 85%;
   left: 0px;
-  top: -60px;
+  top: -100px;
   font-size: 1.3em;
   display: flex;
   transform: skewY(${props => props.skew}deg);
