@@ -177,7 +177,16 @@ class Background extends React.Component {
       activeDot: prevState.activeDot + 1,
       scrolling: true
     }));
-    scrollTo((this.state.activeDot + 1) * (window.innerHeight + 56), () => {
+    const ua = navigator.userAgent.toLowerCase();
+    const isAndroidMobile = ua.indexOf("android") > -1 && ua.indexOf("mobile");
+    let bar = 0;
+    if(isAndroidMobile) {
+      bar = 56;
+    }
+    if(this.state.activateDot === 5 && isAndroidMobile) {
+      bar = 112
+    }
+    scrollTo((this.state.activeDot + 1) * (window.innerHeight + bar), () => {
       this.setState({
         scrolling: false
       })
@@ -218,7 +227,7 @@ class Background extends React.Component {
             </TextBackgroundContent>
           </TextBackground>
         </div>
-        <div className="full-width-image margin-top-0"
+        <div className="full-width-image margin-top-0 mobile-background-position"
           style={{
             backgroundImage: `url(${
               BiancaWallpaper3
