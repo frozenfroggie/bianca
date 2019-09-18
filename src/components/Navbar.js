@@ -65,7 +65,7 @@ const Navbar = class extends React.Component {
         <div className="container">
           <div
             className={
-              classNames(["navbar-menu-end", this.state.mainPage ? "menu-initial" : "menu"])
+              classNames("navbar-menu-end", {this.state.mainPage ? "menu-initial" : "menu"})
             }
             onClick={this.toogleMenu}
             >
