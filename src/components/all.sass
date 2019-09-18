@@ -188,6 +188,7 @@ $menu-label-color: $white-ter
   right: 25px
   width: 26px
   height: 26px
+  transition: all .2s linear
   &:hover
     cursor: pointer
     .menu-expand::before
@@ -403,3 +404,21 @@ $menu-label-color: $white-ter
 .menu-list
   a
     color: #008285
+
+.dots-container-initial
+  right: 10%
+  @media only screen and (min-width: 1088px)
+    right: 7%
+.dots-container
+  right: 5%
+  @media only screen and (min-width: 1088px)
+    right: 3%
+
+.menu-initial
+  right: 10%
+  @media only screen and (min-width: 1088px)
+    right: 35px
+.menu
+  right: 5%
+  @media only screen and (min-width: 1088px)
+    right: -35px

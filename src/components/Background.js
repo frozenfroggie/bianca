@@ -56,8 +56,8 @@ const LogoFederationsContainer = styled.div`
   width: 100vw;
   @media only screen and (min-width: 1088px) {
     width: 200px;
-    left: -80px;
-    top: 20%;
+    left: -60px;
+    top: 5%;
   }
 `
 
@@ -116,7 +116,8 @@ const TextBackgroundContent = styled.div`
   @media only screen and (min-width: 1088px) {
     position: relative;
     font-size: 1.5em;
-    left: -50px;
+    left: -70px;
+    top: 50px;
     width: 50%;
     transform: skew(${props => props.skew}deg);
   }
@@ -187,6 +188,16 @@ class Background extends React.Component {
       bar = 112
     }
     scrollTo((this.state.activeDot + 1) * (window.innerHeight + bar), () => {
+      this.setState({
+        scrolling: false
+      })
+    })
+  }
+  scrollToTop = () => {
+    this.setState(prevState => ({
+      activeDot: 0
+    }));
+    scrollTo(0, () => {
       this.setState({
         scrolling: false
       })
@@ -267,7 +278,9 @@ class Background extends React.Component {
             </TextBackground>
         </div>
         <div>
-          <DotsContainer style={this.state.activeDot === 0 || this.state.activeDot === 5 ? {right: '10%'} : {right: '5%'}}>
+          <DotsContainer className={
+            classNames(this.state.activeDot === 0 || this.state.activeDot === 5 ? "dots-container-initial" : "dots-container")
+          }>
             <Dot active={this.state.activeDot === 0} onClick={() => this.activateDot(0)}></Dot>
             <Dot active={this.state.activeDot === 1} onClick={() => this.activateDot(1)}></Dot>
             <Dot active={this.state.activeDot === 2} onClick={() => this.activateDot(2)}></Dot>
@@ -283,7 +296,7 @@ class Background extends React.Component {
               'scroll-to-top',
               {'scroll-to-top-hidden': this.state.activeDot < 5}
             )}
-            onClick={() => scrollTo(0)} >
+            onClick={this.scrollToTop} >
             <FaChevronUp>
             </FaChevronUp>
           </div>

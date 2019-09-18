@@ -64,8 +64,9 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div
-            className="navbar-menu-end"
-            style={this.state.mainPage ? {right: 30, transition: 'linear .2s'} : {right: -35, transition: 'linear .2s'}}
+            className={
+              classNames(["navbar-menu-end", this.state.mainPage ? "menu-initial" : "menu"])
+            }
             onClick={this.toogleMenu}
             >
             <div className={classNames("menu-expand", {"menu-is-active": this.state.menuExpand})}>
