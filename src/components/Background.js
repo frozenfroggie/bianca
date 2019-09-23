@@ -167,7 +167,16 @@ class Background extends React.Component {
       activeDot,
       scrolling: true
     })
-    scrollTo(activeDot * window.innerHeight, () => {
+    const ua = navigator.userAgent.toLowerCase();
+    const isAndroidMobile = ua.indexOf("android") > -1; // && ua.indexOf("mobile");
+    let bar = 0;
+    if(isAndroidMobile) {
+      bar = 56;
+    }
+    if(this.state.activeDot === 4 && isAndroidMobile) {
+      bar = 112
+    }
+    scrollTo(activeDot * (window.innerHeight + bar), () => {
       this.setState({
         scrolling: false
       })
