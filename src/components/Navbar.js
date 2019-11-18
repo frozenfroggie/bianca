@@ -73,20 +73,20 @@ const Navbar = class extends React.Component {
             {this.state.menuExpand && <div
               id="navMenu"
               className={`navbar-menu ${this.state.navBarActiveClass}`}>
-                <Link className="navbar-item" to="/products">
-                  Nasze psy
+                <Link className="navbar-item" to="/nasze-psy">
+                  NASZE PSY
                 </Link>
-                <Link className="navbar-item" to="/products">
-                  Nasze mioty
+                <Link className="navbar-item" to="/nasze-mioty">
+                  NASZE MIOTY
                 </Link>
-                <Link className="navbar-item" to="/blog">
-                  Wystawy
+                <Link className="navbar-item" to="/wystawy">
+                  WYSTAWY
                 </Link>
-                <Link className="navbar-item" to="/blog">
-                  Galeria
+                <Link className="navbar-item" to="/galeria">
+                  GALERIA
                 </Link>
-                <Link className="navbar-item" to="/contact">
-                  Kontakt
+                <Link className="navbar-item" to="/kontakt">
+                  KONTAKT
                 </Link>
             </div>}
             </div>
