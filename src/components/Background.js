@@ -424,7 +424,7 @@ class Background extends React.Component {
             backgroundPosition: '50% 50%'
           }}>
           </div>
-        <img className="hoverable" src={LogoMobile} width="100" style={{position: 'absolute', left: '10px', top: '10px', zIndex: 10000}} />
+        <img className="hoverable" src={LogoMobile} width="100" style={{position: 'absolute', left: '7%', top: '30px', zIndex: 10000}} />
         <BackgroundBanner
           color="#6699FF"
           className="full-width-image margin-top-0"
