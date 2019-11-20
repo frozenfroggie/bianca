@@ -25,7 +25,6 @@ body
 .navbar .navbar-menu
   box-shadow: none !important
   height: 110px
-  background-color: transparent
 
 .hoverable:hover
   cursor: pointer
@@ -206,11 +205,19 @@ $menu-label-color: $white-ter
 
 .navbar-menu-end
   position: absolute
-  top: 35px
+  top: 30px
   right: 25px
   width: 26px
   height: 26px
   transition: all .2s linear
+  background-color: white
+  border-radius: 50%
+  width: 50px
+  height: 50px
+  display: flex
+  justify-content: center
+  align-items: center
+  border: 2px solid $bianca-blue-contrast
   @media only screen and (min-width: 1088px)
     display: none
   &:hover
@@ -221,7 +228,8 @@ $menu-label-color: $white-ter
       width: 26px
   .menu-expand
     height: 4px
-    width: 100%
+    width: 26px
+    top: -8px
     position: relative
     background-color: $white
     border: 2px solid $bianca-blue-contrast
@@ -443,7 +451,7 @@ $menu-label-color: $white-ter
   @media only screen and (min-width: 1088px)
     right: 35px
 .menu
-  right: 5%
+  right: 3.5%
   @media only screen and (min-width: 1088px)
     right: -35px
 

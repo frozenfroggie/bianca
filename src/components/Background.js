@@ -16,6 +16,7 @@ import BiancaWallpaper5 from '../img/biancaWallpaper5.jpg'
 import FederationLogo1 from '../img/federation_logo1.png'
 import FederationLogo2 from '../img/federation_logo2.png'
 import Logo from '../img/logo.png'
+import LogoMobile from '../img/logo_mobile.png'
 
 const moveLeft = keyframes`
   0% {
@@ -198,9 +199,13 @@ const BannerTitle = styled.h1`
   color: rgba(250,250,250,0.5);
   position: relative;
   height: 50%;
-  font-size: 5em;
-  right: 0%;
+  font-size: 4em;
+  left: 0%;
+  width: 100%;
+  margin-left: 15%;
+  padding: 10px 0px;
   top: 12%;
+  text-align: start;
   @media only screen and (min-width: 1088px) {
     top: 10%;
     right: -5%;
@@ -418,7 +423,8 @@ class Background extends React.Component {
             backgroundSize: 'cover',
             backgroundPosition: '50% 50%'
           }}>
-        </div>
+          </div>
+        <img className="hoverable" src={LogoMobile} width="100" style={{position: 'absolute', left: '10px', top: '10px', zIndex: 10000}} />
         <BackgroundBanner
           color="#6699FF"
           className="full-width-image margin-top-0"
