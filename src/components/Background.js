@@ -2,6 +2,8 @@ import React from 'react'
 import styled, { keyframes } from "styled-components"
 import classNames from 'classnames'
 import { FaChevronUp, FaChevronLeft, FaChevronRight, FaEnvelope, FaUser, FaPhone, FaMapMarkerAlt, FaAngleDown, FaAngleUp, FaMoneyCheck, FaFacebookF } from 'react-icons/fa';
+import OurDogs from './OurDogs'
+import OurLitters from './OurLitters'
 
 import pho from '../img/pho3.jpg'
 import pho2 from '../img/pho2.jpg'
@@ -207,9 +209,10 @@ const BannerTitle = styled.h1`
   top: 12%;
   text-align: start;
   @media only screen and (min-width: 1088px) {
-    top: 10%;
-    right: -5%;
+    top: 7%;
+    margin-right: 4%;
     font-size: 7em;
+    text-align: center;
   }
 `
 
@@ -271,6 +274,7 @@ const Image = styled.div`
   background-size: cover;
   border-radius: 100%;
   width: 100%;
+  max-width: 300px;
   height: 70%;
   min-height: 200px;
 `
@@ -443,48 +447,9 @@ class Background extends React.Component {
           </BannerTitle>
           <Container className="container">
             <Content ref={this.servicesRef} onMouseOver={this.blockScrolling}  onMouseOut={this.unblockScrolling}>
-              <ContentColumns className="columns is-12">
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>DALIA</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Owieczka Świętokrzyska</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho2})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>MARGARET</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Queen Blanche z Marysina</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>DALIA</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Owieczka Świętokrzyska</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho2})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>MARGARET</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Queen Blanche z Marysina</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-              </ContentColumns>
+              <OurDogs
+                posts={this.props.dogs}>
+              </OurDogs>
             </Content>
           </Container>
         </BackgroundBanner>
@@ -505,48 +470,9 @@ class Background extends React.Component {
           </BannerTitle>
           <Container className="container">
             <Content ref={this.servicesRef} onMouseOver={this.blockScrolling}  onMouseOut={this.unblockScrolling}>
-              <ContentColumns className="columns is-12">
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>MIOT I</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Owieczka Świętokrzyska</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho2})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>MIOT II</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Queen Blanche z Marysina</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>MIOT III</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Owieczka Świętokrzyska</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho2})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>MIOT IV</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Queen Blanche z Marysina</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-              </ContentColumns>
+              <OurLitters
+                posts={this.props.litters}>
+              </OurLitters>
             </Content>
           </Container>
         </BackgroundBanner>

@@ -9,45 +9,27 @@ import BlogRoll from '../components/BlogRoll'
 import Background from '../components/Background'
 
 export const IndexPageTemplate = ({
-  image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
+  dogs,
+  litters
 }) => (
   <div>
-    <Background>
+    <Background
+      dogs={dogs}
+      litters={litters}
+      >
     </Background>
   </div>
 )
 
-IndexPageTemplate.propTypes = {
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
-}
-
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
-
+  const { edges: posts } = data.allMarkdownRemark
+  const dogs = posts.filter(post => post.node.frontmatter.templateKey === 'our-dogs')
+  const litters = posts.filter(post => post.node.frontmatter.templateKey === 'our-litters')
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
-        title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        dogs={dogs}
+        litters={litters}
       />
     </Layout>
   )
@@ -65,36 +47,30 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
-        title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { in: ["our-dogs", "our-litters"] } } }
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
           }
-        }
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
+          frontmatter {
+            templateKey
+            officialName
+            homeName
+            title
+            date(formatString: "MMMM DD, YYYY")
             image {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 300, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-            text
           }
-          heading
-          description
         }
       }
     }

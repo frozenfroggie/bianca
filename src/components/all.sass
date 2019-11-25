@@ -22,6 +22,27 @@ body
   overflow-x: hidden
   scroll-behavior: smooth
 
+
+#modal
+  z-index: 1000
+
+.gallery-modal
+  background-color: rgba(0, 0, 0, 0.5)
+  position: fixed
+  height: 100%
+  width: 100%
+  top: 0
+  left: 0
+  display: flex
+  z-index: 999
+  align-items: center
+  justify-content: center
+  .gallery
+    left: 0px
+    background-color: white
+    .gallery-image
+      max-width: 75vw
+      
 .navbar .navbar-menu
   box-shadow: none !important
   height: 110px
@@ -151,7 +172,6 @@ $menu-item-active-color: $bianca-blue-contrast
 $menu-item-active-background-color:	$bianca-blue-contrast
 $menu-list-border-left: 1px solid $bianca-blue-contrast
 $menu-label-color: $white-ter
-
 
 .menu-label
   font-size: 1em !important
@@ -465,3 +485,153 @@ $menu-label-color: $white-ter
   display: none !important
   @media only screen and (min-width: 1088px)
     display: flex !important
+
+.dog
+  width: 300px
+  height: 300px
+  background-position: center
+  background-size: cover
+  margin: 15px
+
+.dog-info
+  width: 100%
+  // min-width: 300px
+  height: 300px
+  background-position: center
+  background-size: cover
+  margin-bottom: 20px
+
+.dogs-container
+  width: 100%
+  // min-height: 100vh
+  margin-left: 0px
+  .gallery-folder-list
+    margin-left: 0px
+    li
+      margin-top: 0px !important
+  .gallery
+    margin-left: 0px
+    list-style-type: none
+    position: relative
+    display: flex
+    width: 100%
+    flex-wrap: wrap
+    margin-top: 0px
+    .gallery-button
+      position: relative
+    .gallery-image
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 100%
+      height: 280px
+      @media only screen and (min-width: 480px)
+        width: auto
+        height: auto
+      margin-top: 0.25em
+      &:hover
+        cursor: pointer
+      .dog
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+        width: 350px
+        height: 250px
+        @media only screen and (min-width: 480px)
+          width: 130px
+          height: 130px
+
+.dog
+    margin: 0px
+    width: 100%
+    max-width: 532px !important
+    height: 300px
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    transition: transform .3s
+    z-index: 1
+
+.gallery-folder-list
+    margin-left: 0px
+    li
+      margin-top: 0px !important
+    .gallery
+      margin-left: 0px
+      list-style-type: none
+      position: relative
+      display: flex
+      width: 100%
+      flex-wrap: wrap
+      margin-top: 0px
+      .gallery-button
+        position: relative
+      .gallery-image
+        display: flex
+        justify-content: center
+        align-items: center
+        width: 100%
+        height: 280px
+        @media only screen and (min-width: 480px)
+          width: auto
+          height: auto
+        margin-top: 0.25em
+        &:hover
+          cursor: pointer
+        .dog
+          box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+          width: 350px
+          height: 250px
+          @media only screen and (min-width: 480px)
+            width: 140px
+            height: 140px
+
+
+.gallery-modal
+  .gallery
+    background-color: transparent
+    position: relative
+    width: auto
+    right: -50px
+    .gallery-close
+      position: absolute
+      top: -40px
+      right: -40px
+      color: rgba(250,250,250,0.5)
+      &:hover
+        cursor: pointer
+    .gallery-image
+      width: auto
+      max-height: 75vh
+      background-size: contain
+    .gallery-image-description
+      position: absolute
+      width: 100%
+      color: white !important
+      text-align: center
+      background-color: rgba(0,0,0,0.7)
+      padding: 5px 10px
+      border-radius: 2px
+    .gallery-button-container
+      position: absolute !important
+      top: 0px
+      display: flex
+      justify-content: center
+      align-items: center
+      height: 99%
+      width: 50px
+      background-color: black
+      opacity: 0.3
+      transition: opacity .2s
+      border: none
+      &:hover
+        cursor: pointer
+        opacity: 0.5
+        .gallery-button
+          color: rgba(250,250,250,0.9)
+      .gallery-button
+        background-color: transparent
+        border: none
+        color: rgba(250,250,250,0.7)
+    .gallery-button-left
+      left: 0px
+    .gallery-button-right
+      right: 0px
