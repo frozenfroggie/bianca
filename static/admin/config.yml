@@ -24,3 +24,43 @@ collections:
       - {label: "Osiągnięcia", name: "achievements", widget: list}
       - {label: "Galeria", name: "galleryImages", widget: list, fields: [{label: Image, name: image, widget: image, required: false}, {required: false, default: "", label: "Podpis", name: "description", widget: string}]}
       - {label: "Opis", name: "description", widget: "text", required: false}
+
+  - name: "litters"
+    label: "Szczenięta"
+    folder: "src/pages"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "our-litters"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Nazwa miotu", name: "title", widget: "string"}
+      - {label: "Zdjęcie główne", name: image, widget: image, required: false}
+      - {label: "Data urodzenia", name: "birthDate", widget: "date", default: "", required: false}
+      - {label: "Rodzice", name: "parents", widget: object, fields: [{default: "", label: "Ojciec", name: "father", widget: string}, {default: "", label: "Matka", name: "mother", widget: string}]}
+      - {label: "Szczenięta", name: "puppies", widget: list, fields: [{default: "", label: "Imię", name: "name", widget: string, required: false}, {default: false, label: "Na sprzedaż", name: "available", widget: boolean, required: false}, {label: "Płeć", name: "gender", widget: "select", options: [{ label: "Pies", value: "male" }, { label: "Suka", value: "female" }]}]}
+      - {label: "Galeria", name: "galleryImages", widget: list,  fields: [{label: Image, name: image, widget: image, required: false}, {default: "", label: "Podpis", name: "description", widget: string, required: false}]}
+
+  - name: "exhibitions"
+    label: "Wystawy"
+    folder: "src/pages"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    identifier_field: "officialName"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "exhibitions"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Nazwa wystawy", name: "title", widget: "string"}
+      - {label: "Zdjęcie główne", name: image, widget: image, required: false}
+      - {label: "Data wystawy", name: "exhibitionDate", widget: "date", required: false}
+      - {label: "Galeria", name: "galleryImages", widget: list, fields: [{label: Image, name: image, widget: image, required: false}, {required: false, default: "", label: "Podpis", name: "description", widget: string}]}
+      - {label: "Wystawione psy", name: "dogs", widget: list, fields: [{label: "Pies", name: "dog", widget: string, required: false}, {required: false, default: [""], label: "Osiągnięcia", name: "achievements", widget: list}]}
+
+  - name: "gallery"
+    label: "Galeria"
+    folder: "src/pages"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "gallery"}
+      - {label: "Nazwa folderu", name: "title", widget: "string"}
+      - {label: "Zdjęcia", name: "galleryImages", widget: list,  fields: [{label: Image, name: image, widget: image}, {required: false, default: "", label: "Podpis", name: "description", widget: string}]}

@@ -10,12 +10,14 @@ import Background from '../components/Background'
 
 export const IndexPageTemplate = ({
   dogs,
-  litters
+  litters,
+  exhibitions
 }) => (
   <div>
     <Background
       dogs={dogs}
       litters={litters}
+      exhibitions={exhibitions}
       >
     </Background>
   </div>
@@ -25,11 +27,13 @@ const IndexPage = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
   const dogs = posts.filter(post => post.node.frontmatter.templateKey === 'our-dogs')
   const litters = posts.filter(post => post.node.frontmatter.templateKey === 'our-litters')
+  const exhibitions = posts.filter(post => post.node.frontmatter.templateKey === 'exhibitions')
   return (
     <Layout>
       <IndexPageTemplate
         dogs={dogs}
         litters={litters}
+        exhibitions={exhibitions}
       />
     </Layout>
   )
@@ -49,7 +53,7 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { templateKey: { in: ["our-dogs", "our-litters"] } } }
+      filter: { frontmatter: { templateKey: { in: ["our-dogs", "our-litters", "exhibitions"] } } }
     ) {
       edges {
         node {

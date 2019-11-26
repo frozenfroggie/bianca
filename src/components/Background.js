@@ -4,6 +4,7 @@ import classNames from 'classnames'
 import { FaChevronUp, FaChevronLeft, FaChevronRight, FaEnvelope, FaUser, FaPhone, FaMapMarkerAlt, FaAngleDown, FaAngleUp, FaMoneyCheck, FaFacebookF } from 'react-icons/fa';
 import OurDogs from './OurDogs'
 import OurLitters from './OurLitters'
+import Exhibitions from './Exhibitions'
 
 import pho from '../img/pho3.jpg'
 import pho2 from '../img/pho2.jpg'
@@ -493,48 +494,9 @@ class Background extends React.Component {
           </BannerTitle>
           <Container className="container">
             <Content ref={this.servicesRef} onMouseOver={this.blockScrolling}  onMouseOut={this.unblockScrolling}>
-              <ContentColumns className="columns is-12">
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>WYSTAWA I</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Owieczka Świętokrzyska</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho2})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>WYSTAWA II</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Queen Blanche z Marysina</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>WYSTAWA III</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Owieczka Świętokrzyska</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho2})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>WYSTAWA IV</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Queen Blanche z Marysina</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-              </ContentColumns>
+              <Exhibitions
+                posts={this.props.exhibitions}>
+              </Exhibitions>
             </Content>
           </Container>
         </BackgroundBanner>
