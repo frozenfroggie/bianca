@@ -5,6 +5,7 @@ import { FaChevronUp, FaChevronLeft, FaChevronRight, FaEnvelope, FaUser, FaPhone
 import OurDogs from './OurDogs'
 import OurLitters from './OurLitters'
 import Exhibitions from './Exhibitions'
+import Gallery from './Gallery'
 
 import pho from '../img/pho3.jpg'
 import pho2 from '../img/pho2.jpg'
@@ -517,48 +518,9 @@ class Background extends React.Component {
           </BannerTitle>
           <Container className="container">
             <Content ref={this.servicesRef} onMouseOver={this.blockScrolling}  onMouseOut={this.unblockScrolling}>
-              <ContentColumns className="columns is-12">
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>FOLDER I</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Owieczka Świętokrzyska</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho2})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>FOLDER II</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Queen Blanche z Marysina</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>FOLDER III</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Owieczka Świętokrzyska</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-                <div className="column is-6">
-                  <ImageSubscriptionContainer>
-                    <Image style={{backgroundImage: `url(${pho2})`}}>
-                    </Image>
-                    <Subscription>
-                      <div style={{fontWeight: 500}}>FOLDER IV</div>
-                      <div style={{fontWeight: 100, fontSize: '.7em'}}>Queen Blanche z Marysina</div>
-                    </Subscription>
-                  </ImageSubscriptionContainer>
-                </div>
-              </ContentColumns>
+              <Gallery
+                posts={this.props.gallery}>
+              </Gallery>
             </Content>
           </Container>
         </BackgroundBanner>
