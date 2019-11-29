@@ -226,6 +226,7 @@ const Container = styled.div`
   padding: 50px 0px;
   @media only screen and (min-width: 1088px) {
     margin-left: -40px;
+    padding: 0px;
   }
 `
 
@@ -430,7 +431,7 @@ class Background extends React.Component {
             backgroundPosition: '50% 50%'
           }}>
           </div>
-        <img className="hoverable" src={LogoMobile} width="100" style={{position: 'absolute', left: '7%', top: '30px', zIndex: 10000}} />
+        <img className="hoverable mobile-only" src={LogoMobile} width="100" style={{position: 'absolute', left: '7%', top: '30px', zIndex: 10000}} />
         <BackgroundBanner
           color="#6699FF"
           className="full-width-image margin-top-0"

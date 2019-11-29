@@ -13,6 +13,9 @@ const ContentColumns = styled.div`
   position: relative;
   @media only screen and (min-width: 1088px) {
     transform: skewX(12deg);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding-left: 50px;
   }
 `
 
