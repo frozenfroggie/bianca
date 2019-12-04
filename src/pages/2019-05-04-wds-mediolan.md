@@ -1,16 +1,16 @@
 ---
 templateKey: exhibitions
 date: 2015-05-04T20:29:00.000Z
-title: WDS Mediolan 2015
-image: /img/mediolan.jpg
-exhibitionDate: 2015-06-09T22:00:00.000Z
+title: Międzynarodowa Wystawa Psów Rasowych w Poznaniu 2017
+image: /img/poznan1.jpg
+exhibitionDate: 2017-10-21T22:00:00.000Z
 galleryImages:
+  - image: /img/poznan1.jpg
   - description: ''
-    image: /img/mediolan1.jpg
-  - image: /img/mediolan2.jpg
-  - image: /img/mediolan.jpg
-  - image: /img/mediolan3.jpg
+    image: /img/poznan2.jpg
 dogs:
-  - dog: Aphrodite's Reflection JACKPOT DRAW
+  - achievements:
+      - lok.3/4 w klasie młodzieży
+    dog: DALIA Owieczka Świętokrzyska
 ---
 
