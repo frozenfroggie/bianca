@@ -1,11 +1,11 @@
 ---
 templateKey: our-dogs
 date: 2019-03-31T22:00:00.000Z
-image: /img/aivi.jpg
-officialName: Labenido LIMITED EDITION
+image: /img/dalia1.jpg
+officialName: DALIA Owieczka Świętokrzyska (FCI)
 lineage: >-
-  https://drive.google.com/file/d/1itWGldRlYHfgseZhNiNxAAbywhh4G2IF/view?usp=sharing
-homeName: Aivi
+  https://drive.google.com/file/d/1YkMhcyhkp1NsoQW08ktYECoZFlzylCC1/view?usp=sharing
+homeName: Dalia
 gender: female
 birthDate: 2017-10-05T22:00:00.000Z
 achievements:
@@ -27,3 +27,4 @@ galleryImages:
   - image: /img/aivi10.jpg
 description: ''
 ---
+
