@@ -12,6 +12,7 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: "officialName"
+    filter: {field: "templateKey", value: "our-dogs"}
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "our-dogs"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -30,6 +31,7 @@ collections:
     folder: "src/pages"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter: {field: "templateKey", value: "our-litters"}
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "our-litters"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -46,6 +48,7 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: "officialName"
+    filter: {field: "templateKey", value: "exhibitions"}
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "exhibitions"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -60,6 +63,7 @@ collections:
     folder: "src/pages"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    filter: {field: "templateKey", value: "gallery"}
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "gallery"}
       - {label: "Nazwa folderu", name: "title", widget: "string"}
