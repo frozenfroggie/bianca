@@ -10,7 +10,11 @@ gender: female
 birthDate: 2017-10-05T22:00:00.000Z
 achievements:
   - Champion of Poland
-galleryImages: []
+galleryImages:
+  - image: /img/dalia1.jpg
+    description: ''
+  - image: /img/dalia2.jpg
+    description: ''
 description: ''
 ---
 
