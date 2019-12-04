@@ -17,6 +17,10 @@ galleryImages:
     description: ''
   - image: /img/ch-dalia.jpg
     description: ''
+  - image: /img/dalia4.jpg
+    description: ''
+  - image: /img/dalia5.jpg
+    description: ''
 description: ''
 ---
 
