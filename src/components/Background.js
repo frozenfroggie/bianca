@@ -153,19 +153,18 @@ const TextBackgroundContent = styled.div`
 `
 
 const BannerTitle = styled.h1`
+  position: relative;
   font-family: Bianca;
   color: rgba(250,250,250,0.5);
-  position: relative;
   height: 50%;
   font-size: 4em;
   left: 0%;
   width: 100%;
   margin-left: 15%;
   padding: 10px 0px;
-  top: 12%;
+  top: 30px;
   text-align: start;
   @media only screen and (min-width: 1088px) {
-    top: 7%;
     margin-right: 4%;
     font-size: 7em;
     text-align: center;
@@ -411,7 +410,7 @@ class Background extends React.Component {
             height: '100vh'
           }}>
           </div>
-        <img className="hoverable mobile-only" src={Logo} width="200" style={{position: 'absolute', left: '7%', top: '30px', zIndex: 10000}} />
+        <img className="hoverable mobile-only" src={Logo} width="200" style={{position: 'absolute', left: '7%', top: '20px', zIndex: 10}} />
         <BackgroundBanner
           color="#6699FF"
           className="full-width-image margin-top-0"
@@ -505,7 +504,7 @@ class Background extends React.Component {
             </Content>
           </Container>
         </BackgroundBanner>
-        <section id="kontakt" className="section" style={{padding: '0px 15px 0px 60px', minHeight: '100vh', color: '#008285', width: '70%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <section id="kontakt" className="section section-contact" style={{padding: '0px 15px 20px 20px', minHeight: '100vh', color: '#008285', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           <div className="container" style={{height: '100%', width: '100%'}}>
             <div className="content" style={{height: '100%'}}>
               <div className="columns" style={{minHeight: '450px'}}>

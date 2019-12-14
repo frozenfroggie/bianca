@@ -19,7 +19,7 @@ const InfoWrapper = ({ children }) => {
               }
               </div>
               <div className="column is-2">
-                <LogoFederationsContainer style={{position: 'fixed', padding: 0, height: 'calc(100vh - 0px)', padding: '50px 40px'}}>
+                <LogoFederationsContainer className="only-desktop" style={{position: 'fixed', padding: 0, height: '100vh', padding: '50px 40px'}}>
                   <img className="hoverable" src={Logo} width="210" style={{position: 'relative'}} />
                   <Menu className="bianca-font">
                     <ul>
