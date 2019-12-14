@@ -8,7 +8,7 @@ export const Title = styled.h2`
   text-align: center;
   margin: auto;
   margin-bottom: -30px;
-  height: 60px;
+  min-height: 60px;
   font-family: 'Lato', sans-serif;
 `
 

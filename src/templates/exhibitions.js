@@ -21,7 +21,8 @@ export const ExhibitionsPageTemplate = ({
   closeLightbox,
   lightbox,
   currentImage,
-  photos
+  photos,
+  description
 }) => {
   return (
     <InfoWrapper>
@@ -41,6 +42,7 @@ export const ExhibitionsPageTemplate = ({
         openLightbox={(idx, e) => openLightbox(idx, e)}
         currentImage={currentImage}
         photos={photos}
+        description={description}
         />
     </InfoWrapper>
   )
@@ -82,6 +84,7 @@ class ExhibitionsPage extends React.Component {
           lightbox={this.state.lightbox}
           currentImage={this.state.currentImage}
           photos={this.state.photos}
+          description={frontmatter.description}
         />
       </Layout>
     )
@@ -99,6 +102,7 @@ query ExhibitionPageByID($id: String!) {
           templateKey
           date
           exhibitionDate
+          description
           dogs {
             dog
           }

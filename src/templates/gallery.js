@@ -15,12 +15,14 @@ export const GalleryPageTemplate = ({
   closeLightbox,
   lightbox,
   currentImage,
-  photos
+  photos,
+  image
 }) => {
   return (
     <InfoWrapper>
       <Title> { title } </Title>
       <DogInfo
+        image={image}
         title={title}
         galleryImages={galleryImages}
         lightbox={lightbox}

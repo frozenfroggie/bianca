@@ -20,7 +20,8 @@ export const LittersPageTemplate = ({
   closeLightbox,
   lightbox,
   currentImage,
-  photos
+  photos,
+  description
 }) => {
   return (
     <InfoWrapper>
@@ -38,6 +39,7 @@ export const LittersPageTemplate = ({
         openLightbox={(idx, e) => openLightbox(idx, e)}
         currentImage={currentImage}
         photos={photos}
+        description={description}
         />
     </InfoWrapper>
   )
@@ -72,6 +74,7 @@ class LittersPage extends React.Component {
           title={frontmatter.title}
           birthDate={frontmatter.birthDate}
           galleryImages={frontmatter.galleryImages}
+          description={frontmatter.description}
           openLightbox={(idx, e) => this.openLightbox(frontmatter.galleryImages, idx, e)}
           closeLightbox={this.closeLightbox}
           lightbox={this.state.lightbox}
@@ -94,6 +97,7 @@ query LittersPageByID($id: String!) {
         templateKey
         date
         birthDate
+        description
         parents {
           father
           mother
