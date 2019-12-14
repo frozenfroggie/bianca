@@ -51,7 +51,6 @@ const Image = styled.div`
 class Gallery extends React.Component {
   render() {
     const { posts } = this.props
-    console.log(posts[0].node.frontmatter.image.childImageSharp.fluid.src);
     return (
       <ContentColumns className="columns is-12 is-multiline">
         {posts &&
