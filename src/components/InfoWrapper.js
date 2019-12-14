@@ -20,7 +20,7 @@ const InfoWrapper = ({ children }) => {
               </div>
               <div className="column is-2">
                 <LogoFederationsContainer className="only-desktop" style={{position: 'fixed', padding: 0, height: '100vh', padding: '50px 40px'}}>
-                  <img className="hoverable" src={Logo} width="210" style={{position: 'relative'}} />
+                  <a href="/"><img className="hoverable" src={Logo} width="210" style={{position: 'relative'}} /></a>
                   <Menu className="bianca-font">
                     <ul>
                       <li><a href="/#nasze-psy">NASZE PSY</a></li>
