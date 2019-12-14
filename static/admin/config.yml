@@ -70,3 +70,4 @@ collections:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "gallery"}
       - {label: "Nazwa folderu", name: "title", widget: "string"}
       - {label: "Zdjęcia", name: "galleryImages", widget: list,  fields: [{label: Image, name: image, widget: image}, {required: false, default: "", label: "Podpis", name: "description", widget: string}]}
+      - {label: "Zdjęcie główne", name: image, widget: image, required: false}

@@ -67,10 +67,12 @@ const DogInfo = props => (
                     </div>
             }
             {
-              props.dogs ?
+              props.exhibitionDate &&
                 <p className="is-size-5 dog-info-subheader">DATA WYSTAWY:</p>
-                :
-                <p className="is-size-5 dog-info-subheader">DATA URODZENIA:</p>
+            }
+            {
+                props.birthDate &&
+                  <p className="is-size-5 dog-info-subheader">DATA URODZENIA:</p>
             }
             <p className="is-size-5 dog-info-text">
             {
