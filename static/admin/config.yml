@@ -41,6 +41,7 @@ collections:
       - {label: "Rodzice", name: "parents", widget: object, fields: [{default: "", label: "Ojciec", name: "father", widget: string}, {default: "", label: "Matka", name: "mother", widget: string}]}
       - {label: "Szczenięta", name: "puppies", widget: list, fields: [{default: "", label: "Imię", name: "name", widget: string, required: false}, {default: false, label: "Na sprzedaż", name: "available", widget: boolean, required: false}, {label: "Płeć", name: "gender", widget: "select", options: [{ label: "Pies", value: "male" }, { label: "Suka", value: "female" }]}]}
       - {label: "Galeria", name: "galleryImages", widget: list,  fields: [{label: Image, name: image, widget: image, required: false}, {default: "", label: "Podpis", name: "description", widget: string, required: false}]}
+      - {label: "Opis", name: "description", widget: "text", required: false}
 
   - name: "exhibitions"
     label: "Wystawy"
@@ -57,6 +58,7 @@ collections:
       - {label: "Data wystawy", name: "exhibitionDate", widget: "date", required: false}
       - {label: "Galeria", name: "galleryImages", widget: list, fields: [{label: Image, name: image, widget: image, required: false}, {required: false, default: "", label: "Podpis", name: "description", widget: string}]}
       - {label: "Wystawione psy", name: "dogs", widget: list, fields: [{label: "Pies", name: "dog", widget: string, required: false}, {required: false, default: [""], label: "Osiągnięcia", name: "achievements", widget: list}]}
+      - {label: "Opis", name: "description", widget: "text", required: false}
 
   - name: "gallery"
     label: "Galeria"

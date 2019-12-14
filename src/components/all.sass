@@ -82,7 +82,7 @@ body
   align-items: center
 .full-width-image
   position: relative
-  height: 100vh
+  // height: 100vh
   width: 100vw
   background-color: transparent
   background-size: 100vh auto
@@ -224,7 +224,7 @@ $menu-label-color: $white-ter
 
 .navbar-menu-end
   position: absolute
-  top: 30px
+  top: 52px
   right: 25px
   width: 26px
   height: 26px
@@ -500,10 +500,20 @@ $menu-label-color: $white-ter
   background-size: cover
   margin-bottom: 20px
 
+.dog-info-subheader
+  font-size: 2em
+  font-weight: 300
+  margin-top: 10px
+
+.dog-info-text
+  text-indent: .5em
+  color: $bianca-blue-contrast-extra
+
 .dogs-container
   width: 100%
   // min-height: 100vh
   margin-left: 0px
+  color: $bianca-blue-contrast-extra
   .gallery-folder-list
     margin-left: 0px
     li
@@ -639,3 +649,10 @@ $menu-label-color: $white-ter
   display: block
   @media only screen and (min-width: 1088px)
     display: none
+
+.facebook
+  color: $bianca-blue-contrast-extra
+  &:hover
+    cursor: pointer
+    text-decoration: underline
+    color: $bianca-blue-contrast

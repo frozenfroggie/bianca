@@ -54,7 +54,7 @@ class DogsPage extends React.Component {
       currentImage: 0,
       photos: []
     }
-  }
+  }Title
   openLightbox = (galleryImages, idx, event) => {
     event.preventDefault();
     const photos = galleryImages.map(({image, description}) => ({image: image.childImageSharp.fluid, description}))

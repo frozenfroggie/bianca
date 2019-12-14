@@ -6,6 +6,7 @@ import OurDogs from './OurDogs'
 import OurLitters from './OurLitters'
 import Exhibitions from './Exhibitions'
 import Gallery from './Gallery'
+import { Title, Menu, LogoFederationsContainer, Federations } from './style'
 
 import pho from '../img/pho3.jpg'
 import pho2 from '../img/pho2.jpg'
@@ -75,20 +76,6 @@ const Row = styled.div`
   display: flex;
 `
 
-const Menu = styled.div`
-  font-size: 1em;
-  font-weight: 100;
-  ul {
-    li {
-      padding: 5px;
-      text-align: right;
-      a {
-        color: #008285;
-      }
-    }
-  }
-`
-
 const Dot = styled.div`
   width: 6px;
   height: 6px;
@@ -118,39 +105,6 @@ const DotsContainer = styled.div`
   align-items: center;
   @media only screen and (min-width: 1088px) {
     top: calc(50% - 30px);
-  }
-`
-
-const LogoFederationsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  flex-direction: column;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100%;
-  padding: 50px 100px;
-  @media only screen and (min-width: 1088px) {
-    width: 100%;
-  }
-`
-
-const Federations = styled.div`
-  display: flex;
-  width: 100vw;
-  height: 80px;
-  position: relative;
-  top: 25px;
-  left: 20px;
-  img {
-    margin-right: 5px;
-  }
-  @media only screen and (min-width: 1088px) {
-    justify-content: space-evenly;
-    width: 200px;
-    left: 0px;
   }
 `
 
@@ -223,7 +177,7 @@ const Container = styled.div`
   height: 60%;
   width: 100vw;
   max-width: 100%;
-  padding: 50px 0px;
+  margin-top: 50px;
   @media only screen and (min-width: 1088px) {
     margin-left: -40px;
     padding: 0px;
@@ -231,7 +185,8 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-  height: 100%;
+  /* height: 100%; */
+  padding: 50px 0px;
   display: flex;
   align-items: center;
   overflowX: scroll;
@@ -320,16 +275,40 @@ class Background extends React.Component {
     }
   }
   componentDidMount() {
-    const item = this.servicesRef.current;
-    console.log(item);
-    item && item.addEventListener('wheel', (e) => {
-      if(this.state.isScrollingBlocked) {
-        e.preventDefault();
-        e.returnValue = false;
-      }
-      if (e.deltaY > 0) item.scrollLeft += 100;
-      else item.scrollLeft -= 100;
-    });
+    // window.location.href = location.hash;
+    var loc = window.location.hash;
+    window.location.hash = " ";
+    window.location.hash = loc;
+
+    // let dotNumber = 0;
+    // switch(window.location.hash) {
+    //   case '#nasze-psy':
+    //     dotNumber = 1;
+    //     break;
+    //   case '#nasze-mioty':
+    //     dotNumber = 2;
+    //     break;
+    //   case '#wystawy':
+    //     dotNumber = 3;
+    //     break;
+    //   case '#galeria':
+    //     dotNumber = 4;
+    //     break;
+    //   default:
+    //     dotNumber = 0;
+    //     break;
+    // }
+    // this.activateDot(dotNumber);
+    // const item = this.servicesRef.current;
+    // console.log(item);
+    // item && item.addEventListener('wheel', (e) => {
+    //   if(this.state.isScrollingBlocked) {
+    //     e.preventDefault();
+    //     e.returnValue = false;
+    //   }
+    //   if (e.deltaY > 0) item.scrollLeft += 100;
+    //   else item.scrollLeft -= 100;
+    // });
     typeof window !== 'undefined' && window.addEventListener('scroll', (e) => this.onScroll(e));
   }
   onScroll = (e) => {
@@ -428,10 +407,11 @@ class Background extends React.Component {
             })`,
             backgroundAttachment: `fixed`,
             backgroundSize: 'cover',
-            backgroundPosition: '50% 50%'
+            backgroundPosition: '35% 50%',
+            height: '100vh'
           }}>
           </div>
-        <img className="hoverable mobile-only" src={LogoMobile} width="100" style={{position: 'absolute', left: '7%', top: '30px', zIndex: 10000}} />
+        <img className="hoverable mobile-only" src={Logo} width="200" style={{position: 'absolute', left: '7%', top: '30px', zIndex: 10000}} />
         <BackgroundBanner
           color="#6699FF"
           className="full-width-image margin-top-0"
@@ -531,25 +511,31 @@ class Background extends React.Component {
               <div className="columns" style={{minHeight: '450px'}}>
                 <div className="column is-6">
                   <div style={{fontSize: '1.5em', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly'}}>
-                    <p style={{fontSize: '32px', marginBottom: '50px'}}>W celu umówienia się na wizytę prosimy o kontakt telefoniczny:</p>
+                    <p style={{fontSize: '32px', marginBottom: '50px'}}>Służymy radą i chętnie odpowiemy na Wasze pytania</p>
                     <Row>
                       <FaPhone style={{marginRight: 25, position: 'relative', top: 4}} />
                       <div>
-                        +48 504 237 358<br/>
+                        507 833 684<br/>
                       </div>
                     </Row>
                     <Row>
                       <FaEnvelope style={{marginRight: 25, position: 'relative', top: 4}} />
                       <div>
-                        example@gmail.com
+                        iwona710@op.pl
                       </div>
                     </Row>
                     <Row>
                       <FaMapMarkerAlt style={{marginRight: 25, position: 'relative', top: 4}} />
                       <div>
-                        ul. Pocztowa 13/9<br/>
-                        89-600 Chojnice<br/>
+                        Miłkowska Karczma 86B<br/>
+                        27-415 Kunów<br/>
                       </div>
+                    </Row>
+                    <Row>
+                      <FaFacebookF style={{marginRight: 25, position: 'relative', top: 4}} />
+                      <a className="facebook" target="_blank" href="https://www.facebook.com/Bianca-Principessa-FCI-Bichon-Frise-889078161423552/">
+                        Grupa na Facebooku
+                      </a>
                     </Row>
                   </div>
                 </div>

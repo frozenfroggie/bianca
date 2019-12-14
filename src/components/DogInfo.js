@@ -10,9 +10,9 @@ import Lightbox from './Lightbox.js';
 import defaultDog from '../img/default_dog.png'
 
 const DogInfo = props => (
-  <div className="is-parent column is-12" key={props.id}>
-    <div className="box notification is-full">
-      <div className="columns">
+  <div className="is-parent" key={props.id}>
+    <div className="is-full">
+      <div className="columns is-12">
         <div className="column is-6" >
             <div className="dog-info" style={{
               backgroundImage: `url(${
@@ -25,29 +25,29 @@ const DogInfo = props => (
             {
               props.homeName ?
                 <div>
-                  <p className="is-size-6 dog-info-subheader">Imię domowe:</p>
-                  <p className="is-size-5"><strong>{ props.homeName }</strong></p>
+                  <p className="is-size-5 dog-info-subheader">IMIĘ DOMOWE:</p>
+                  <p className="is-size-5 dog-info-text">{ props.homeName }</p>
                 </div>
                 :
                 props.parents ?
                   <div>
-                    <p className="is-size-6 dog-info-subheader">Rodzice:</p>
+                    <p className="is-size-5 dog-info-subheader">RODZICE:</p>
                     <div>
-                      <div className="is-size-5"><FaMars style={{color: '#19A1FF'}} /> <strong>{ props.parents.father }</strong></div>
-                      <div className="is-size-5"><FaVenus style={{color: '#FF0075'}} /> <strong>{ props.parents.mother }</strong></div>
+                      <div className="is-size-5 dog-info-"><FaMars style={{color: '#19A1FF'}} />{ props.parents.father }</div>
+                      <div className="is-size-5 dog-info-"><FaVenus style={{color: '#FF0075'}} />{ props.parents.mother }</div>
                     </div>
                   </div>
                   :
                   props.dogs &&
                     <div style={{margin: 10}}>
-                      <p className="is-size-6 dog-info-subheader">Wystawiane psy:</p>
+                      <p className="is-size-5 dog-info-subheader">WYSTAWIANE PSY:</p>
                       <ul className="puppies-list">
                         {
                           props.dogs &&
                           props.dogs.map((dog, idx) => {
                             console.log(dog)
                             return (
-                              <li key={idx} className="is-size-5">
+                              <li key={idx} className="is-size-5 dog-info-">
                                 <strong>{ dog.dog } </strong>
                                 {
                                   dog.achievements && dog.achievements[0] !== '' &&
@@ -55,7 +55,7 @@ const DogInfo = props => (
                                     <span>Osiągnięcia: </span>
                                     <ul style={{paddingLeft: 10}}>
                                     {
-                                      dog.achievements.map(achievement => <li><strong>{achievement}</strong></li>)
+                                      dog.achievements.map(achievement => <li>{achievement}</li>)
                                     }
                                     </ul>
                                   </div>
@@ -69,11 +69,11 @@ const DogInfo = props => (
             }
             {
               props.dogs ?
-                <p className="is-size-6 dog-info-subheader">Data wystawy:</p>
+                <p className="is-size-5 dog-info-subheader">DATA WYSTAWY:</p>
                 :
-                <p className="is-size-6 dog-info-subheader">Data urodzenia:</p>
+                <p className="is-size-5 dog-info-subheader">DATA URODZENIA:</p>
             }
-            <p className="is-size-5"><strong>
+            <p className="is-size-5 dog-info-text">
             {
               props.birthDate ?
                 moment(props.birthDate).local().format("D MMMM YYYY")
@@ -83,11 +83,11 @@ const DogInfo = props => (
                   :
                   ' - '
             }
-            </strong></p>
+           </p>
             {
               props.lineage &&
                 <div>
-                  <p className="is-size-6 dog-info-subheader" style={{marginBottom: 5}}>Rodowód:</p>
+                  <p className="is-size-5 dog-info-subheader" style={{marginBottom: 5}}>RODOWÓD:</p>
                   <a target="_blank" rel="noopener noreferrer" href={props.lineage}>
                     <FaPaperclip size="2em" />
                   </a>
@@ -96,10 +96,10 @@ const DogInfo = props => (
             {
               props.achievements && props.achievements.length > 0 &&
               <div>
-                <p className="is-size-6 dog-info-subheader">Osiągnięcia:</p>
+                <p className="is-size-5 dog-info-subheader">OSIĄGNIĘCIA:</p>
                 <ul>
                   {
-                    props.achievements.map((achievement, idx) => <li className="is-size-5" key={idx}><strong>{achievement}</strong></li>)
+                    props.achievements.map((achievement, idx) => <li className="is-size-5 dog-info-text" key={idx}>{achievement}</li>)
                   }
                 </ul>
               </div>
@@ -118,7 +118,7 @@ const DogInfo = props => (
           {
             props.puppies &&
             <div>
-              <p className="is-size-6" style={{marginBottom: 0}}>Szczenięta:</p>
+              <p className="is-size-5" style={{marginBottom: 0}}>SZCZENIĘTA:</p>
               <ul className={'puppies-list'}>
                 <strong>
                   {
@@ -148,7 +148,7 @@ const DogInfo = props => (
             </div>
           }
           <div style={{padding: "0px 0px"}}>
-            <p className="is-size-6 dog-info-subheader" style={{padding: "0px 10px"}}>Galeria:</p>
+            <p className="is-size-5 dog-info-subheader" style={{padding: "0px 10px"}}>GALERIA:</p>
             <ul className="gallery">
               {
                 props.galleryImages && props.galleryImages.map(({image}, idx) => {

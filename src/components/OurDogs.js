@@ -6,15 +6,15 @@ import styled, { keyframes } from "styled-components"
 import defaultDog from '../img/default_dog.png'
 
 const ContentColumns = styled.div`
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   margin-left: 60;
   margin-right: 0;
   position: relative;
   @media only screen and (min-width: 1088px) {
     transform: skewX(12deg);
-    overflow-x: scroll;
-    overflow-y: hidden;
+    /* overflow-x: scroll;
+    overflow-y: hidden; */
     padding-left: 50px;
   }
 `
@@ -53,7 +53,7 @@ class OurDogs extends React.Component {
     const { posts } = this.props
     console.log(posts[0].node.frontmatter.image.childImageSharp.fluid.src);
     return (
-      <ContentColumns className="columns is-12">
+      <ContentColumns className="columns is-12 is-multiline">
         {posts &&
           posts.map(({ node: post }) => (
             <div className="column is-6" key={post.id}>

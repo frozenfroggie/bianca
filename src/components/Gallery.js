@@ -13,8 +13,8 @@ const ContentColumns = styled.div`
   position: relative;
   @media only screen and (min-width: 1088px) {
     transform: skewX(12deg);
-    overflow-x: scroll;
-    overflow-y: hidden;
+    /* overflow-x: scroll;
+    overflow-y: hidden; */
     padding-left: 50px;
   }
 `
@@ -53,7 +53,7 @@ class Gallery extends React.Component {
     const { posts } = this.props
     console.log(posts[0].node.frontmatter.image.childImageSharp.fluid.src);
     return (
-      <ContentColumns className="columns is-12">
+      <ContentColumns className="columns is-12 is-multiline">
         {posts &&
           posts.map(({ node: post }) => (
             <div className="column is-6" key={post.id}>
