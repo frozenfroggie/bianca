@@ -311,7 +311,7 @@ class Background extends React.Component {
     typeof window !== 'undefined' && window.addEventListener('scroll', (e) => this.onScroll(e));
   }
   onScroll = (e) => {
-    const activeDot = Math.floor(window.scrollY / window.innerHeight);
+    const activeDot = Math.floor((window.scrollY + 50) / window.innerHeight);
     if(this.state.activeDot !== activeDot && activeDot <= 5) {
       this.setState({
         activeDot
