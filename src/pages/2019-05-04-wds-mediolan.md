@@ -20,5 +20,9 @@ description: >
   finibus neque ut viverra dignissim. Vestibulum nec augue vestibulum, porta
   mauris et, mattis justo. Orci varius natoque penatibus et magnis dis
   parturient montes, nascetur ridiculus mus.
+achievements:
+  - pierwsze osiągnięcie
+  - drugie
+  - trzecie
 ---
 
