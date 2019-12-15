@@ -105,6 +105,7 @@ query ExhibitionPageByID($id: String!) {
           description
           dogs {
             dog
+            achievements
           }
           galleryImages {
           image {

@@ -504,7 +504,7 @@ class Background extends React.Component {
             </Content>
           </Container>
         </BackgroundBanner>
-        <section id="kontakt" className="section section-contact" style={{padding: '0px 15px 20px 20px', minHeight: '100vh', color: '#008285', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <section id="kontakt" className="section section-contact" style={{padding: '0px 15px 20px 4%', minHeight: '100vh', color: '#008285', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
           <div className="container" style={{height: '100%', width: '100%'}}>
             <div className="content" style={{height: '100%'}}>
               <div className="columns" style={{minHeight: '450px'}}>

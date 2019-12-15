@@ -4,6 +4,7 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import styled, { keyframes } from "styled-components"
 import defaultDog from '../img/default_dog.png'
+import { Image } from './style'
 
 const ContentColumns = styled.div`
   /* height: 100%; */
@@ -36,16 +37,6 @@ const Subscription = styled.div`
   line-height: 1em;
   margin-top: 15px;
   color: #018ba7;
-`
-
-const Image = styled.div`
-  background-position: center;
-  background-size: cover;
-  border-radius: 100%;
-  width: 100%;
-  max-width: 300px;
-  height: 70%;
-  min-height: 200px;
 `
 
 class OurDogs extends React.Component {

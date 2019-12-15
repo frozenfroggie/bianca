@@ -46,12 +46,12 @@ const DogInfo = props => (
                           props.dogs &&
                           props.dogs.map((dog, idx) => {
                             return (
-                              <li key={idx} className="is-size-5 dog-info-text">
+                              <li key={idx} className="is-size-5">
                                 { dog.dog }
                                 {
                                   dog.achievements && dog.achievements[0] !== '' &&
                                   <div style={{paddingLeft: 10}}>
-                                    <span>Osiągnięcia: </span>
+                                    <span className="is-size-5 dog-info-subheader">OSIĄGNIĘCIA: </span>
                                     <ul style={{paddingLeft: 10}}>
                                     {
                                       dog.achievements.map(achievement => <li>{achievement}</li>)
