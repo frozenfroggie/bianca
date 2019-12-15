@@ -3,13 +3,16 @@ import styled from 'styled-components';
 export const Title = styled.h2`
   position: relative;
   top: -50px;
-  font-size: 2.5em;
   color: #00A5A8;
   text-align: center;
   margin: auto;
   margin-bottom: -30px;
   min-height: 60px;
   font-family: 'Lato', sans-serif;
+  font-size: 1.7em;
+  @media only screen and (min-width: 1088px) {
+    font-size: 2.1em;
+  }
 `
 
 export const Menu = styled.div`
