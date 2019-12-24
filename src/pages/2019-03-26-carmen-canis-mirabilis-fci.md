@@ -21,6 +21,6 @@ galleryImages:
     description: ''
   - image: /img/dalia5.jpg
     description: ''
-description: Lorem
+description: ''
 ---
 
