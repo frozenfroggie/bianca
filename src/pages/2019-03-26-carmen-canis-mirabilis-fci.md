@@ -4,7 +4,6 @@ date: 2019-03-31T22:00:00.000Z
 image: /img/dalia1.jpg
 officialName: DALIA Owieczka Świętokrzyska
 lineage: >-
-  site_url:
   https://drive.google.com/file/d/1YkMhcyhkp1NsoQW08ktYECoZFlzylCC1/view?usp=sharing
 homeName: Kesi
 gender: female
