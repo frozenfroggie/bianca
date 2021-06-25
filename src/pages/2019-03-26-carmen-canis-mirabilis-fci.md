@@ -7,7 +7,7 @@ lineage: >-
   https://drive.google.com/file/d/1Y88hDiTXlSsDpa9c2KK56yA8L2vU9tN_/view?usp=sharing
 homeName: Kesi
 gender: female
-birthDate: 2017-10-05T22:00:00.000Z
+birthDate: 2017-01-04T23:00:00.000Z
 achievements:
   - Champion of Poland
 galleryImages:
